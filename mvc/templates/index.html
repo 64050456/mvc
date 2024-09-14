@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Calculation</title>
+</head>
+<body>
+    <h1>Milk Calculator</h1>
+
+    <h2>ปริมาณนม</h2>
+    <form action="/calculate" method="POST">
+        <label for="code">Cow ID :</label>
+        <input type="text" name="code" id="code" required>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <h2>Information of cows in this farm</h2>
+    <table border="1">
+        <tr>
+            <th>Cow ID</th>
+            <th>Color</th>
+            <th>Age Year</th>
+            <th>Age Month</th>
+        </tr>
+        {% for cow in cows %}
+        <tr>
+            <td>{{ cow.code }}</td>
+            <td>{{ cow.color }}</td>
+            <td>{{ cow.age_year }}</td>
+            <td>{{ cow.age_month }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
